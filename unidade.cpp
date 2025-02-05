@@ -25,6 +25,8 @@ void Unidade:: somaDestruicao(){
     cout << "=> Destruições: " << destruicoes << endl;
 }
 void Unidade:: print(){
-    cout << " ==> PODER DE ATAQUE: " << poderAtaque << endl;
+    cout << "==> UNIDADES <==" << endl;
+    // cout << "=> NOME DA UNIDADE:" << << endl;
+    cout << " => PODER DE ATAQUE GERAL: " << poderAtaque << endl;
 }
 

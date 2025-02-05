@@ -3,17 +3,22 @@
 #include <cstdlib> //pra rand()
 #include <ctime> //pra time()
 
+#include "Date.h"
+#include "campanha.h"
+#include "batalha.h"
+#include "exercito.h"
 #include "unidade.h"
 #include "infantaria.h"
 #include "veiculo.h"
 #include "aeronave.h"
-#include "Date.h"
 
 using namespace std;
 
 int main(){
     srand(static_cast<unsigned int>(time(0)));
 
+    //Declarar Date aqui
+    Exercito* exercito = new Exercito("Exercito 1"); //exemplo
     Unidade* unidade = new Unidade();
     Infantaria* infantaria = new Infantaria();
     Veiculo* veiculo = new Veiculo();
@@ -32,6 +37,8 @@ int main(){
     aeronave->print();
     cout << "3. PODER DE ATAQUE AERONAVE: " << aeronave->getPoderAtaque() << endl;
 
+
+    delete exercito;
     delete infantaria;
     delete veiculo;
     delete aeronave;
