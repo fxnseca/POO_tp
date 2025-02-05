@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include <cstdlib> //pra rand()
 #include <ctime> //pra time()
 
@@ -18,30 +19,59 @@ int main(){
     srand(static_cast<unsigned int>(time(0)));
 
     //Declarar Date aqui
-    Exercito* exercito = new Exercito("Exercito 1"); //exemplo
+    // Exercito* exercito = new Exercito("Exercito 1"); //exemplo
     Unidade* unidade = new Unidade();
-    Infantaria* infantaria = new Infantaria();
-    Veiculo* veiculo = new Veiculo();
+
+    vector<Infantaria*> infantarias;
+    infantarias.push_back(new Infantaria());
+    infantarias.push_back(new Infantaria());
+
+    vector<Veiculo*> veiculos;
+    veiculos.push_back(new Veiculo());
+    veiculos.push_back(new Veiculo());
+    
     Aeronave* aeronave = new Aeronave();
 
     unidade->somaDestruicao();
-
     unidade->print();
-    
-    infantaria->print();
-    cout << "1. PODER DE ATAQUE INFANTARIA: " << infantaria->getPoderAtaque() << endl;
 
-    veiculo->print();
-    cout << "2. PODER DE ATAQUE VEICULO: " << veiculo->getPoderAtaque() << endl;
+    int resultadoUnidade = 0;
+    int resulInf = 0;
+    int resulVeic = 0;
+    size_t index = 1;   
     
+    for (Infantaria* inf : infantarias){
+        cout << endl << "==> INFANTARIA " << index << " <==" << endl;
+        inf->print();
+        resulInf += inf->getPoderAtaque();
+        index++;
+    }
+    cout << "1. PODER DE ATAQUE TOTAL DE INFANTARIA: " << resulInf << endl;
+
+    for(Veiculo* veic : veiculos){
+        cout << endl << "==> VEICULO " << index << " <==" << endl;
+        veic->print();
+        resulVeic += veic->getPoderAtaque();
+        index++;
+    }
+    cout << "2. PODER DE ATAQUE TOTAL DE VEICULO: " << resulVeic << endl;
+
     aeronave->print();
-    cout << "3. PODER DE ATAQUE AERONAVE: " << aeronave->getPoderAtaque() << endl;
+    cout << "3. PODER DE ATAQUE TOTAL DE AERONAVE: " << aeronave->getPoderAtaque() << endl;
 
+    resultadoUnidade = aeronave->getPoderAtaque() + resulVeic + resulInf;
+    cout << endl <<"==> PODER DE ATAQUE TOTAL DA UNIDADE: " << resultadoUnidade << endl;
 
-    delete exercito;
-    delete infantaria;
-    delete veiculo;
+    // delete exercito;
+    //DESALOCANDO AS MEMORIAS:
+    for (Infantaria* inf : infantarias) {
+        delete inf;
+    }
+    for(Veiculo* veic : veiculos){
+        delete veic;
+    }
     delete aeronave;
     delete unidade;
+    
     return 0;
 }

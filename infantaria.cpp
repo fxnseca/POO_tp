@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 #include "unidade.h"
 #include "infantaria.h"
 
@@ -13,13 +14,13 @@ Infantaria::Infantaria(){
 
 Infantaria::~Infantaria() {}
 
-int Infantaria::getPoderAtaque() { //sobrescreve a função de cima
+int Infantaria::getPoderAtaque() { //sobrescreve a função 
     return ((poderAtaque * 5) + (forca * 3) + (velocidade * 2)) / 10;
 }
 
 void Infantaria::print() {
-    cout << endl << "==> INFANTARIA <==" << endl;
-    cout << "=> Poder de Ataque: " << poderAtaque << endl;
-    cout << "=> Força: " << forca << endl;
-    cout << "=> Velocidade: " << velocidade << endl;
+    cout << "- Poder de Ataque: " << poderAtaque << endl;
+    cout << "- Força: " << forca << endl;
+    cout << "- Velocidade: " << velocidade << endl;
+    cout << "=> Poder de ataque TOTAL: " << getPoderAtaque() <<endl;
 }

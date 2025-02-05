@@ -18,8 +18,8 @@ int Veiculo::getPoderAtaque(){
 }
 
 void Veiculo::print() {
-    cout << endl << "==> VEICULO <==" << endl;
-    cout << "=> Poder de Ataque: " << poderAtaque << endl;
-    cout << "=> Blindagem: " << blindagem << endl;
-    cout << "=> Potencia de fogo: " << potenciadeFogo << endl;
+    cout << "- Poder de Ataque: " << poderAtaque << endl;
+    cout << "- Blindagem: " << blindagem << endl;
+    cout << "- Potencia de fogo: " << potenciadeFogo << endl;
+    cout << "=> Poder de ataque TOTAL: " << getPoderAtaque() <<endl;
 }

@@ -4,6 +4,9 @@
 #include <ctime> //pra time()
 
 #include "unidade.h"
+#include "veiculo.h"
+#include "infantaria.h"
+#include "aeronave.h"
 #include "Date.h"
 
 using namespace std;
@@ -25,8 +28,7 @@ void Unidade:: somaDestruicao(){
     cout << "=> Destruições: " << destruicoes << endl;
 }
 void Unidade:: print(){
-    cout << "==> UNIDADES <==" << endl;
+    cout << "--------------- UNIDADE ---------------" << endl;
     // cout << "=> NOME DA UNIDADE:" << << endl;
-    cout << " => PODER DE ATAQUE GERAL: " << poderAtaque << endl;
+    cout << " => PODER DE ATAQUE GERAL: (aleatorio)" << poderAtaque << endl;
 }
-

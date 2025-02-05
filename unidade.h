@@ -15,7 +15,7 @@ public:
     virtual int getPoderAtaque();
     void setPoderAtaque(int poderAtaque);
     void somaDestruicao();
-    virtual void print();
+    virtual void print(); 
 };
 
 #endif

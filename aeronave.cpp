@@ -19,7 +19,7 @@ int Aeronave::getPoderAtaque() { //sobrescreve a função de cima
 
 void Aeronave::print(){
     cout << endl << "==> AERONAVE <==" << endl;
-    cout << "=> Poder de Ataque: " << poderAtaque << endl;
-    cout << "=> Manobrabilidade: " << manobrabilidade << endl;
-    cout << "=> Alcance: " << alcance << endl;
+    cout << "- Poder de Ataque: " << poderAtaque << endl;
+    cout << "- Manobrabilidade: " << manobrabilidade << endl;
+    cout << "- Alcance: " << alcance << endl;
 }
